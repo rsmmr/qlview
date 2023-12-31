@@ -1,0 +1,7 @@
+build/
+tmp
+.##*
+.cache
+*.swp
+old
+.DS_Store
