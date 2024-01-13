@@ -101,10 +101,12 @@ struct ContentView: View {
                     
                     Button(action: { doc.print() }) {
                         Image(systemName: "printer")
-                    }.help("Print")
+                    }
+                    .disabled(!doc.canPrint())
+                    .help("Print")
                     
                     ShareLink(item: doc.url)
-                        .help("Share ...")
+                    .help("Share ...")
                 }
                 
                 ToolbarItemGroup(placement: .automatic) {

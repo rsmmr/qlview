@@ -20,9 +20,15 @@ extension FocusedValues {
 struct qlviewApp: App {
     @Environment(\.dismiss) private var dismiss
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    @FocusedBinding(\.document) var document
+    @FocusedBinding(\.document) var document_binding
+    
+    var document : Document? {
+        guard let document = document_binding else { return nil }
+        return document
+    }
+
     @State private var showAbout = false
-        
+      
     var body: some Scene {
         WindowGroup(for: Document.self) { $doc in
             ContentView(doc: doc)
@@ -50,7 +56,6 @@ struct qlviewApp: App {
                 
                 Button("Open in App") {
                     guard let document = document else { return }
-                    guard let document = document else { return }
                     
                     document.open()
                     NSApplication.shared.keyWindow?.close()
@@ -58,7 +63,6 @@ struct qlviewApp: App {
                 .keyboardShortcut("o", modifiers: .command)
                 
                 Button("Move To ...") {
-                    guard let document = document else { return }
                     guard let document = document else { return }
                     
                     if document.move() {
@@ -72,11 +76,11 @@ struct qlviewApp: App {
                 
                 Button("Print ...") {
                     guard let document = document else { return }
-                    guard let document = document else { return }
                     
                     document.print()
                 }
                 .keyboardShortcut("p", modifiers: .command)
+                .disabled(document == nil || !document!.canPrint())
             })
         }
     }
