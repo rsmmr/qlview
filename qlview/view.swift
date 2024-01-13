@@ -9,9 +9,7 @@ class OurQuickLookItem: NSObject, QLPreviewItem {
 
 struct QLView: NSViewRepresentable {
     let url: URL?
-    
-    @Binding var qlview: NSView?
-        
+            
     func makeNSView(context: Context) -> NSView {
         let view = QLPreviewView()
         
@@ -20,10 +18,6 @@ struct QLView: NSViewRepresentable {
             item.previewItemURL = url
             item.previewItemTitle = "Preview"
             view.previewItem = item
-
-            DispatchQueue.main.async {
-                self.qlview = view
-            }
         }
                 
         return view
@@ -37,7 +31,6 @@ struct QLView: NSViewRepresentable {
 struct ContentView: View {    
     @Namespace var Namespace
     @State var doc: Document?
-    @State private var qlview: NSView?
     @FocusState private var focus: Bool
     @Environment(\.dismiss) var dismiss
     
@@ -63,7 +56,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             if let doc = doc {
-                QLView(url: doc.url, qlview: $qlview)
+                QLView(url: doc.url)
                     .focused($focus)
                 
                 Text(doc.prettyURL)

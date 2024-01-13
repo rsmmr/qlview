@@ -43,7 +43,9 @@ struct Document: Identifiable, Codable, Hashable {
     
     func print() {
         showAlert(msg: "Error", sub: "Printing not yet implemented.", style: .critical)
-//        let view = QLView(url: url)
+//        let nsview = view.makeNSView(context: nil)
+//
+//        let view = QLView(url: url, qlview: nsview)
 //        let renderer = ImageRenderer(content: AnyView(view) )
 //        let nsview = view.makeNSView(context: nil)
 //        let printInfo = NSPrintInfo()
