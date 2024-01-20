@@ -1,3 +1,15 @@
+0.1-3 | 2024-01-20 22:29:20 +0100
+
+  * Polish code infrastructure.
+
+  * Implement printing.
+
+    We support printing only for certain file types, currently: `.gif`,
+    `.jpg`, `.md`, `.pdf`, `.png`, `.rtf`, `.txt`. For all other formats,
+    open them in their corresponding applications first and print from
+    there.
+
+  * Remove unneccessary state.
 
 0.1 | 2024-01-07 15:03:19 +0100
 

@@ -1,0 +1,16 @@
+name: CI pipeline
+
+on: push
+
+jobs:
+  build:
+    runs-on: macos-14
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Build code
+      run: make release
+
+    - name: Run check
+      run: make check

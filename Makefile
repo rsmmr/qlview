@@ -1,8 +1,12 @@
 
-all: adhoc
+all: debug
 
-adhoc:
-	xcodebuild -quiet -target qlview-adhoc
+debug:
+	@xcodebuild -quiet -target qlview-adhoc -configuration Debug
 
-signed:
-	xcodebuild -quiet -target qlview-signed
+release:
+	@xcodebuild -quiet -target qlview-signed -configuration Release
+
+check:
+	codesign --verify --verbose build/Release/qlview
+	codesign --display --verbose=4 build/Release/qlview 2>&1 | grep Signed
