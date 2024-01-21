@@ -1,6 +1,4 @@
-0.1-3 | 2024-01-20 22:29:20 +0100
-
-  * Polish code infrastructure.
+0.2 | 2024-02-03 22:24:03 +0100
 
   * Implement printing.
 
@@ -9,7 +7,11 @@
     open them in their corresponding applications first and print from
     there.
 
-  * Remove unneccessary state.
+  * Extend CI setup to build releases.
+
+  * Polish code infrastructure.
+
+  * Remove unnecessary state.
 
 0.1 | 2024-01-07 15:03:19 +0100
 

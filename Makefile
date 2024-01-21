@@ -1,12 +1,21 @@
 
-all: debug
+VERSION=$(shell cat VERSION)
 
-debug:
-	@xcodebuild -quiet -target qlview-adhoc -configuration Debug
+all: adhoc
+
+adhoc:
+	@xcodebuild -quiet -target qlview-adhoc -configuration Release
 
 release:
 	@xcodebuild -quiet -target qlview-signed -configuration Release
 
-check:
+check: release
 	codesign --verify --verbose build/Release/qlview
-	codesign --display --verbose=4 build/Release/qlview 2>&1 | grep Signed
+	spctl --assess --verbose build/Release/qlview
+
+dist: release
+	@rm -rf build/dist
+	@mkdir -p build/dist
+	cp -R build/Release/qlview build/dist
+	cd build/dist && zip -r ../qlview-$(VERSION).zip *
+	@ls build/*.zip
