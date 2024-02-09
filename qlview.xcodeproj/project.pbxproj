@@ -203,13 +203,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4UJK727T59;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = 4UJK727T59;
 				ENABLE_HARDENED_RUNTIME = YES;
 				OTHER_CODE_SIGN_FLAGS = "--timestamp";
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = org.rsmmr.qlview;
 				PRODUCT_NAME = qlview;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -219,13 +222,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4UJK727T59;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = 4UJK727T59;
 				ENABLE_HARDENED_RUNTIME = YES;
 				OTHER_CODE_SIGN_FLAGS = "--timestamp";
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = org.rsmmr.qlview;
 				PRODUCT_NAME = qlview;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
