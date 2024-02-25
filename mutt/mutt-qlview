@@ -1,0 +1,37 @@
+#!/bin/sh
+#
+# Wrapper around qlview for use from mutt's mailcap. qlview must be in same
+# path as this script, or inside $PATH. The script initially retain a copy of
+# the file being viewed, which will it will delete when running for the 1st
+# time day later, or when run again with the same file name.
+
+prog=$0
+
+usage() {
+    echo "usage: $(basename "${prog}") <file>"
+    exit 1
+}
+
+error() {
+    echo "$(basename "${prog}"): $*" >&2
+    exit 1
+}
+
+qlview="$(cd "$(dirname "$0")" && pwd)/qlview"
+test -f "${qlview}" -a -x "${qlview}" || qlview="$(command -v qlview 2>/dev/null)"
+
+test -n "${qlview}" || error "qlview not found"
+test $# -eq 1 || usage
+
+file="$1"
+test -f "${file}" || error "no file '${file}'"
+
+tmpdir="${HOME:?}/.cache/mutt"
+mkdir -m 0700 -p "${tmpdir}"
+find "${tmpdir}" -maxdepth 1 -type f -mtime +1d -delete
+
+tmpfile="${tmpdir}/$(basename "${file}")"
+mkdir -p "${tmpdir}"
+cp -f "${file}" "${tmpfile}"
+
+nohup "${qlview}" "${tmpfile}" >/dev/null 2>&1 </dev/null &

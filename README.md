@@ -35,6 +35,24 @@ Run it from the command line:
 If you execute `qlview` without any arguments, it'll open an empty
 window where you can drag a document into.
 
+## Mutt integration
+
+To use `qlview` with [mutt](http://www.mutt.org), there's a helper
+script
+[mutt-qlview](https://github.com/rsmmr/qlview/blob/main/mutt/mutt-qlview)
+coming with the distribution. Put both that script and `qlview` itself
+into your `PATH` and then add [these mailcap
+entries](https://github.com/rsmmr/qlview/blob/main/mutt/mailcap) to
+your mutt configuration; see [mutt's
+manual](http://www.mutt.org/doc/manual/#mailcap) for more on that.
+
+You can also add the following to your `.muttrc` to quickly open the
+first HTML attachment in `qlview`:
+
+```
+macro  index,pager V  <view-attachments>/html\n<view-mailcap><quit>
+```
+
 ## Feedback
 
 Feel free to open issues or pull requests.

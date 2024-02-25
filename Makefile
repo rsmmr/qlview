@@ -17,6 +17,7 @@ zip:
 	rm -rf build/dist
 	mkdir -p build/dist
 	cp -R build/Release/qlview build/dist
+	cp -R mutt build/dist
 	cd build/dist && zip -r ../qlview-$(VERSION).zip *
 	ls build/*.zip | sed 's/^/> /'
 

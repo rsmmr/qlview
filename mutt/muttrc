@@ -1,0 +1,2 @@
+# Drectly open first HTML attachment with qlview from index and pager.
+macro index,pager V   <view-attachments>/html\n<view-mailcap><quit>
