@@ -1,6 +1,6 @@
-0.3-1 | 2024-02-25 08:48:09 +0100
+0.4 | 2024-02-25 08:49:28 +0100
 
-  * Add helpers using qlview from mutt.
+  * Add helpers for using `qlview` from mutt.
 
 0.3 | 2024-02-10 13:11:55 +0100
 
