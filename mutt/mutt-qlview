@@ -8,7 +8,7 @@
 prog=$0
 
 usage() {
-    echo "usage: $(basename "${prog}") <file>"
+    echo "usage: $(basename "${prog}") <file> [<charset>]"
     exit 1
 }
 
@@ -21,7 +21,7 @@ qlview="$(cd "$(dirname "$0")" && pwd)/qlview"
 test -f "${qlview}" -a -x "${qlview}" || qlview="$(command -v qlview 2>/dev/null)"
 
 test -n "${qlview}" || error "qlview not found"
-test $# -eq 1 || usage
+(test $# -eq 1 || test $# -eq 2) || usage
 
 file="$1"
 test -f "${file}" || error "no file '${file}'"
@@ -32,6 +32,12 @@ find "${tmpdir}" -maxdepth 1 -type f -mtime +1d -delete
 
 tmpfile="${tmpdir}/$(basename "${file}")"
 mkdir -p "${tmpdir}"
-cp -f "${file}" "${tmpfile}"
+
+charset="$2"
+if [ -n "${charset}" -a "${charset}" != "utf-8" ]; then
+    iconv -f "${charset}" -t utf-8 "${file}" > "${tmpfile}"
+else
+    cp -f "${file}" "${tmpfile}"
+fi
 
 nohup "${qlview}" "${tmpfile}" >/dev/null 2>&1 </dev/null &

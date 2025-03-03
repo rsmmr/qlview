@@ -2,5 +2,5 @@ application/*; mutt-qlview %s
 audio/*; mutt-qlview %s
 image/*; mutt-qlview %s
 text/*; mutt-qlview %s
-text/html; mutt-qlview %s; nametemplate=%s.html;
+text/html; mutt-qlview %s %{charset}; nametemplate=%s.html;
 video/*; mutt-qlview %s

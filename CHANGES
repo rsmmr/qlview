@@ -1,3 +1,7 @@
+0.4-1 | 2025-03-03 18:05:39 +0100
+
+  * mutt: Convert HTML to UTF8 before viewing if it comes in a different charset.
+
 0.4 | 2024-02-25 08:49:28 +0100
 
   * Add helpers for using `qlview` from mutt.
