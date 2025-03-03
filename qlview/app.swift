@@ -29,6 +29,8 @@ struct qlviewApp: App {
     @FocusedBinding(\.document) private var document_binding
     @State private var showAbout = false
 
+    @State private var shouldOpenNewDocument = false
+
     var body: some Scene {
         WindowGroup(for: Document.self) { $doc in
             ContentView(doc: doc)
@@ -49,6 +51,9 @@ struct qlviewApp: App {
                 }
         }
         .defaultSize(width: 800, height: 600)
+        .restorationBehavior(.disabled)
+        .defaultLaunchBehavior(.automatic)
+        .handlesExternalEvents(matching: [])  // do not open URLs in existing scene
         .commands {
             CommandGroup(replacing: CommandGroupPlacement.appInfo) {
                 Button("About qlview") { showAbout = true }
@@ -88,29 +93,31 @@ struct qlviewApp: App {
     }
 }
 
+// TODO: Can we move this over to UIApplicationDelegate now?
 class AppDelegate: NSObject, NSApplicationDelegate {
     @Environment(\.openWindow) private var openWindow
 
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
-        NSApplication.shared.setActivationPolicy(.regular)
-        NSApplication.shared.activate(ignoringOtherApps: true)
-        // NSApp.setActivationPolicy(.accessory) // No menu bar, no dock
+    func application(_ sender: NSApplication, open: [URL]) {
+        var documents: [Document] = []
 
-        let documents = CommandLine.arguments.suffix(from: 1).enumerated().map({ (idx, url) in
-            return Document(url: URL(fileURLWithPath: url), id: idx)
-        })
+        for url in open {
+            guard let components = NSURLComponents(url: url, resolvingAgainstBaseURL: true),
+                let path = components.path
+            else { continue }
 
-        if !documents.isEmpty {
-            // Close the intial window. TODO: Is there a way to prevent this
-            // from opening in the 1st place?
-            if let window = NSApplication.shared.windows.first {
-                window.close()
-            }
+            let doc = Document(url: URL(fileURLWithPath: path), id: documents.count + 1)
+            documents.append(doc)
         }
 
         for doc in documents {
             openWindow(value: doc)
         }
+    }
+
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
+        NSApplication.shared.setActivationPolicy(.regular)
+        NSApplication.shared.activate(ignoringOtherApps: true)
+        // NSApp.setActivationPolicy(.accessory) // No menu bar, no dock
     }
 
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {

@@ -36,6 +36,7 @@ struct ContentView: View {
     @Namespace private var Namespace
     @FocusState private var focus: Bool
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.openWindow) private var openWindow
 
     func saveWindowSize() {
         guard let window = window else { return }
@@ -157,18 +158,24 @@ struct ContentView: View {
             guard let provider = NSItemProvider(contentsOf: doc.url) else { return [] }
             return [provider]
         }
+        .onOpenURL { url in
+            guard let components = NSURLComponents(url: url, resolvingAgainstBaseURL: true),
+                let path = components.path
+            else { return }
+
+            if doc == nil {
+                doc = Document(url: URL(fileURLWithPath: path), id: 1)
+            } else {
+                openWindow(value: doc)
+            }
+        }
     }
 }
 
-// Preview only works with 'productType = "com.apple.product-type.application"' in 'project.pbxproj'.
-// That however then builds an Application instead of a command line tool. For the latter, we need
-// 'productType = "com.apple.product-type.tool". So we need to switch between the two by directly
-// editing that file.
+#Preview("Preview") {
+    ContentView(doc: Document(url: URL(fileURLWithPath: "/Users/robin/work/qlview/screenshot.png"), id: 1))
+}
 
-// #Preview("Preview") {
-//    ContentView(doc: Document(url: URL(fileURLWithPath: "/Users/robin/Data/www-icir/tmp/brotagonist.jpg"), id: 1))
-//}
-
-//#Preview("Empty") {
-//    ContentView(doc: nil)
-//}
+#Preview("Empty") {
+    ContentView(doc: nil)
+}

@@ -3,63 +3,37 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		0038E25D2B415CDF00F29E53 /* document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007002002B41584F008A2C68 /* document.swift */; };
-		0038E25E2B415CDF00F29E53 /* app.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007002012B41584F008A2C68 /* app.swift */; };
-		0038E25F2B415CDF00F29E53 /* view.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007001FF2B41584F008A2C68 /* view.swift */; };
-		0038E2602B415CDF00F29E53 /* util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007002022B41584F008A2C68 /* util.swift */; };
-		0038E2692B4AD8C800F29E53 /* about.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0038E2682B4AD8C800F29E53 /* about.swift */; };
-		0038E26A2B4AD8C800F29E53 /* about.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0038E2682B4AD8C800F29E53 /* about.swift */; };
-		007002032B41584F008A2C68 /* view.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007001FF2B41584F008A2C68 /* view.swift */; };
-		007002042B41584F008A2C68 /* document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007002002B41584F008A2C68 /* document.swift */; };
-		007002052B41584F008A2C68 /* app.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007002012B41584F008A2C68 /* app.swift */; };
-		007002062B41584F008A2C68 /* util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007002022B41584F008A2C68 /* util.swift */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		0038E2622B415CDF00F29E53 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
-		007001F32B415824008A2C68 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		0038E2662B415CDF00F29E53 /* qlview */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = qlview; sourceTree = BUILT_PRODUCTS_DIR; };
-		0038E2682B4AD8C800F29E53 /* about.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = about.swift; sourceTree = "<group>"; };
-		0038E26B2B4ADFED00F29E53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		007001F52B415824008A2C68 /* qlview */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = qlview; sourceTree = BUILT_PRODUCTS_DIR; };
-		007001FF2B41584F008A2C68 /* view.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = view.swift; sourceTree = "<group>"; };
-		007002002B41584F008A2C68 /* document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = document.swift; sourceTree = "<group>"; };
-		007002012B41584F008A2C68 /* app.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = app.swift; sourceTree = "<group>"; };
-		007002022B41584F008A2C68 /* util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = util.swift; sourceTree = "<group>"; };
+		0003D2972D6CD5AD003A858B /* qlview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qlview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFrameworksBuildPhase section */
-		0038E2612B415CDF00F29E53 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		00ABA5642D7B72D400BC16A8 /* Exceptions for "qlview" folder in "qlview" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+				"Preview Content/Preview Assets.xcassets",
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			target = 0003D2962D6CD5AD003A858B /* qlview */;
 		};
-		007001F22B415824008A2C68 /* Frameworks */ = {
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		0003D2992D6CD5AD003A858B /* qlview */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				00ABA5642D7B72D400BC16A8 /* Exceptions for "qlview" folder in "qlview" target */,
+			);
+			path = qlview;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0003D2942D6CD5AD003A858B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -69,174 +43,184 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		007001EC2B415824008A2C68 = {
+		0003D28E2D6CD5AD003A858B = {
 			isa = PBXGroup;
 			children = (
-				007001F72B415824008A2C68 /* qlview */,
-				007001F62B415824008A2C68 /* Products */,
+				0003D2992D6CD5AD003A858B /* qlview */,
+				0003D2982D6CD5AD003A858B /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		007001F62B415824008A2C68 /* Products */ = {
+		0003D2982D6CD5AD003A858B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				007001F52B415824008A2C68 /* qlview */,
-				0038E2662B415CDF00F29E53 /* qlview */,
+				0003D2972D6CD5AD003A858B /* qlview.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		007001F72B415824008A2C68 /* qlview */ = {
-			isa = PBXGroup;
-			children = (
-				007002012B41584F008A2C68 /* app.swift */,
-				007002002B41584F008A2C68 /* document.swift */,
-				0038E2682B4AD8C800F29E53 /* about.swift */,
-				007002022B41584F008A2C68 /* util.swift */,
-				007001FF2B41584F008A2C68 /* view.swift */,
-				0038E26B2B4ADFED00F29E53 /* Info.plist */,
-			);
-			path = qlview;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
-/* Begin PBXNativeTarget section */
-		0038E25B2B415CDF00F29E53 /* qlview-signed */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0038E2632B415CDF00F29E53 /* Build configuration list for PBXNativeTarget "qlview-signed" */;
-			buildPhases = (
-				0038E25C2B415CDF00F29E53 /* Sources */,
-				0038E2612B415CDF00F29E53 /* Frameworks */,
-				0038E2622B415CDF00F29E53 /* CopyFiles */,
+/* Begin PBXHeadersBuildPhase section */
+		00ABA5622D7B70B400BC16A8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "qlview-signed";
-			productName = qlview;
-			productReference = 0038E2662B415CDF00F29E53 /* qlview */;
-			productType = "com.apple.product-type.tool";
+			runOnlyForDeploymentPostprocessing = 0;
 		};
-		007001F42B415824008A2C68 /* qlview-adhoc */ = {
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0003D2962D6CD5AD003A858B /* qlview */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 007001FC2B415824008A2C68 /* Build configuration list for PBXNativeTarget "qlview-adhoc" */;
+			buildConfigurationList = 0003D2A82D6CD5AE003A858B /* Build configuration list for PBXNativeTarget "qlview" */;
 			buildPhases = (
-				007001F12B415824008A2C68 /* Sources */,
-				007001F22B415824008A2C68 /* Frameworks */,
-				007001F32B415824008A2C68 /* CopyFiles */,
+				00ABA5622D7B70B400BC16A8 /* Headers */,
+				0003D2932D6CD5AD003A858B /* Sources */,
+				0003D2942D6CD5AD003A858B /* Frameworks */,
+				00ABA5632D7B72D400BC16A8 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "qlview-adhoc";
+			fileSystemSynchronizedGroups = (
+				0003D2992D6CD5AD003A858B /* qlview */,
+			);
+			name = qlview;
+			packageProductDependencies = (
+			);
 			productName = qlview;
-			productReference = 007001F52B415824008A2C68 /* qlview */;
-			productType = "com.apple.product-type.tool";
+			productReference = 0003D2972D6CD5AD003A858B /* qlview.app */;
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		007001ED2B415824008A2C68 /* Project object */ = {
+		0003D28F2D6CD5AD003A858B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1510;
-				LastUpgradeCheck = 1510;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
 				TargetAttributes = {
-					007001F42B415824008A2C68 = {
-						CreatedOnToolsVersion = 15.1;
-						LastSwiftMigration = 1510;
+					0003D2962D6CD5AD003A858B = {
+						CreatedOnToolsVersion = 16.2;
 					};
 				};
 			};
-			buildConfigurationList = 007001F02B415824008A2C68 /* Build configuration list for PBXProject "qlview" */;
-			compatibilityVersion = "Xcode 14.0";
+			buildConfigurationList = 0003D2922D6CD5AD003A858B /* Build configuration list for PBXProject "qlview" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 007001EC2B415824008A2C68;
-			productRefGroup = 007001F62B415824008A2C68 /* Products */;
+			mainGroup = 0003D28E2D6CD5AD003A858B;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 0003D2982D6CD5AD003A858B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				007001F42B415824008A2C68 /* qlview-adhoc */,
-				0038E25B2B415CDF00F29E53 /* qlview-signed */,
+				0003D2962D6CD5AD003A858B /* qlview */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXSourcesBuildPhase section */
-		0038E25C2B415CDF00F29E53 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
+/* Begin PBXResourcesBuildPhase section */
+		00ABA5632D7B72D400BC16A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0038E26A2B4AD8C800F29E53 /* about.swift in Sources */,
-				0038E25D2B415CDF00F29E53 /* document.swift in Sources */,
-				0038E25E2B415CDF00F29E53 /* app.swift in Sources */,
-				0038E25F2B415CDF00F29E53 /* view.swift in Sources */,
-				0038E2602B415CDF00F29E53 /* util.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		007001F12B415824008A2C68 /* Sources */ = {
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0003D2932D6CD5AD003A858B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0038E2692B4AD8C800F29E53 /* about.swift in Sources */,
-				007002042B41584F008A2C68 /* document.swift in Sources */,
-				007002052B41584F008A2C68 /* app.swift in Sources */,
-				007002032B41584F008A2C68 /* view.swift in Sources */,
-				007002062B41584F008A2C68 /* util.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		0038E2642B415CDF00F29E53 /* Debug */ = {
+		0003D2A92D6CD5AE003A858B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
-				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = qlview/qlview.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 0.5;
+				DEVELOPMENT_ASSET_PATHS = "\"qlview/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=macosx*]" = 4UJK727T59;
 				ENABLE_HARDENED_RUNTIME = YES;
-				OTHER_CODE_SIGN_FLAGS = "--timestamp";
-				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = org.rsmmr.qlview;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = qlview/Info.plist;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				OUR_VERSION_NUMBER = "$(date)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.rsmmr.qlview;
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = qlview;
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
-		0038E2652B415CDF00F29E53 /* Release */ = {
+		0003D2AA2D6CD5AE003A858B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
-				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = qlview/qlview.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 0.5;
+				DEVELOPMENT_ASSET_PATHS = "\"qlview/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=macosx*]" = 4UJK727T59;
 				ENABLE_HARDENED_RUNTIME = YES;
-				OTHER_CODE_SIGN_FLAGS = "--timestamp";
-				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = org.rsmmr.qlview;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = qlview/Info.plist;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				OUR_VERSION_NUMBER = "$(date)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.rsmmr.qlview;
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = qlview;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
-		007001FA2B415824008A2C68 /* Debug */ = {
+		0003D2AB2D6CD5AE003A858B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -270,7 +254,6 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -289,19 +272,18 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = qlview/Info.plist;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		007001FB2B415824008A2C68 /* Release */ = {
+		0003D2AC2D6CD5AE003A858B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -335,7 +317,6 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -348,77 +329,37 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = qlview/Info.plist;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
-			};
-			name = Release;
-		};
-		007001FD2B415824008A2C68 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4UJK727T59;
-				ENABLE_HARDENED_RUNTIME = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = org.rsmmr.qlview;
-				PRODUCT_NAME = qlview;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		007001FE2B415824008A2C68 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4UJK727T59;
-				ENABLE_HARDENED_RUNTIME = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = org.rsmmr.qlview;
-				PRODUCT_NAME = qlview;
-				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0038E2632B415CDF00F29E53 /* Build configuration list for PBXNativeTarget "qlview-signed" */ = {
+		0003D2922D6CD5AD003A858B /* Build configuration list for PBXProject "qlview" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0038E2642B415CDF00F29E53 /* Debug */,
-				0038E2652B415CDF00F29E53 /* Release */,
+				0003D2AB2D6CD5AE003A858B /* Debug */,
+				0003D2AC2D6CD5AE003A858B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		007001F02B415824008A2C68 /* Build configuration list for PBXProject "qlview" */ = {
+		0003D2A82D6CD5AE003A858B /* Build configuration list for PBXNativeTarget "qlview" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				007001FA2B415824008A2C68 /* Debug */,
-				007001FB2B415824008A2C68 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		007001FC2B415824008A2C68 /* Build configuration list for PBXNativeTarget "qlview-adhoc" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				007001FD2B415824008A2C68 /* Debug */,
-				007001FE2B415824008A2C68 /* Release */,
+				0003D2A92D6CD5AE003A858B /* Debug */,
+				0003D2AA2D6CD5AE003A858B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 007001ED2B415824008A2C68 /* Project object */;
+	rootObject = 0003D28F2D6CD5AD003A858B /* Project object */;
 }

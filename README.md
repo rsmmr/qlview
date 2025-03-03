@@ -2,8 +2,8 @@
 
 This is a standalone document previewer based on macOS's built-in
 Quick Look engine——imagine a nicer `qlmanage`. It's particularly
-useful as a quick command-line viewer for terminal applications, like
-[mutt](http://www.mutt.org).
+useful for using from the command line or inside terminal
+applications, like [mutt](http://www.mutt.org).
 
 ![Screenshot](screenshot.png "Screenshot")
 
@@ -11,39 +11,36 @@ useful as a quick command-line viewer for terminal applications, like
 
 You can either download a [pre-built
 release](https://github.com/rsmmr/qlview/releases), or build it
-yourself. Either way, you then probably want to copy the executable
-into your `PATH`.
+yourself.
 
-When getting the current release, you'll find the executable inside
-the ZIP file you downloaded. While it's codesigned and notarized,
-please note that you still cannot just double-click to run it, as it
-is not an app but a command line application.
+When getting the current release, install it like any other
+application: open the disk image and drag the app to your
+`Applications` folder.
 
 When building it yourself, make sure you have Xcode installed. Either
 use that to open and build the project, or just run `make` from the
-command line. You will then find the executable in
-`build/Release/qlview`.
+command line. You will then find the application in
+`build/Release/qlview.app`.
 
 ## Usage
 
-Run it from the command line:
+You can start `qlview` from the Finder, and it'll open an empty window
+where you can drag a document into. More usefully, you can open
+documents from the command line through a custom URL scheme:
 
 ```
-# qlview <file>
+# open qlview:/path/to/file
 ```
-
-If you execute `qlview` without any arguments, it'll open an empty
-window where you can drag a document into.
 
 ## Mutt integration
 
 To use `qlview` with [mutt](http://www.mutt.org), there's a helper
 script
 [mutt-qlview](https://github.com/rsmmr/qlview/blob/main/mutt/mutt-qlview)
-coming with the distribution. Put both that script and `qlview` itself
-into your `PATH` and then add [these mailcap
+coming with the distribution. Put that script into your `PATH` and
+then add [these mailcap
 entries](https://github.com/rsmmr/qlview/blob/main/mutt/mailcap) to
-your mutt configuration; see [mutt's
+your mutt configuration. See [mutt's
 manual](http://www.mutt.org/doc/manual/#mailcap) for more on that.
 
 You can also add the following to your `.muttrc` to quickly open the

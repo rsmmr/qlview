@@ -3,17 +3,18 @@ name: CI pipeline
 on: push
 
 jobs:
-  adhoc:
-    runs-on: macos-14
+  build:
+    runs-on: macos-15
 
     steps:
     - uses: actions/checkout@v4
 
     - name: Build code
-      run: make adhoc
+      run: make build
 
-  release:
-    runs-on: macos-14
+  dist:
+    if: github.ref == 'refs/heads/main'
+    runs-on: macos-15
     environment: release-macos
 
     steps:
@@ -52,13 +53,10 @@ jobs:
         xcrun notarytool store-credentials -k "${APP_STORE_KEY_PATH}" -d "${APP_STORE_KEY_ID}" -i "${APP_STORE_ISSUER_ID}" --keychain "${KEYCHAIN_PATH}" --no-validate "App Store Connect - Notarization API Key"
         rm "${APP_STORE_KEY_PATH}"
 
-    - name: Build code
-      run: make release
-
     - name: Build and notarize distribution
       run: |
         make dist
-        (cd build && echo "DIST=$(echo *.zip)" >>$GITHUB_ENV)
+        (cd build && echo "DIST=$(echo *.dmg)" >>$GITHUB_ENV)
 
     - uses: actions/upload-artifact@v4
       with:
@@ -71,13 +69,13 @@ jobs:
         security delete-keychain $RUNNER_TEMP/app-signing.keychain-db
         rm -f $RUNNER_TEMP/key.p8
 
-  publish_release:
+  publish:
     permissions:
       contents: write
 
     runs-on: macos-14
     if: (startsWith(github.ref, 'refs/tags/v') && !contains(github.ref, '-dev'))
-    needs: [release]
+    needs: [dist]
 
     steps:
       - name: Checkout code
@@ -107,4 +105,4 @@ jobs:
           name: ${{ env.release_name }}
           body_path: ${{ runner.temp }}/release-msg
           files: |
-            artifacts/*/*.zip
+            artifacts/*/*.dmg

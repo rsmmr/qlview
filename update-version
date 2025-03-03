@@ -1,0 +1,5 @@
+#! /bin/sh
+
+base=$(cd $(dirname $0) && pwd)
+version=$(cat ${base}/VERSION)
+agvtool new-version "${version}"

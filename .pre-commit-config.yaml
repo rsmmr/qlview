@@ -9,11 +9,21 @@ repos:
     entry: swift-format format -i
     language: system
     types: ["swift"]
-    stages: ["commit"]
+    stages: ["pre-commit"]
 
 - repo: https://github.com/pre-commit/pre-commit-hooks
   rev: v4.0.1
   hooks:
   - id: trailing-whitespace
+    exclude: '\.pxd$'
   - id: end-of-file-fixer
+    exclude: '\.pxd$'
   - id: check-added-large-files
+
+- repo: local
+  hooks:
+    - id: update-version
+      name: Update version number in Xcode project
+      entry: ./update-version
+      language: script
+      pass_filenames: false
