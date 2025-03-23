@@ -1,8 +1,21 @@
-0.4-1 | 2025-03-03 18:05:39 +0100
+0.5 | 2025-03-23 15:30:43 +0100
+
+  * Switch `qlview` over to a full macOS app.
+
+    This stops building `qlview` as a command-line application and makes
+    it a normal app instead. As an app, it now supports a new URL scheme
+    `qlview:/path/to/file` that allows opening documents from the
+    command-line simply via `open`. The advantage of that approach is that
+    we no longer end up start up separate `qlview` instances for each
+    document being opened.
+
+    We also switch from distributing a ZIP file to a more standard DMG.
 
   * mutt: Convert HTML to UTF8 before viewing if it comes in a different charset.
 
-0.4 | 2024-02-25 08:49:28 +0100
+  * Tweak GitHub workflow.
+
+0.4 | 2025-03-03 18:05:39 +0100
 
   * Add helpers for using `qlview` from mutt.
 
