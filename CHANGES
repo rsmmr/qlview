@@ -1,3 +1,11 @@
+0.5-2 | 2025-09-17 09:41:42 +0200
+
+  * Update about box.
+
+  * Upgrade app icon using Icon Composer.
+
+    Plus, some further Xcode 26 tweaks.
+
 0.5 | 2025-03-23 15:30:43 +0100
 
   * Switch `qlview` over to a full macOS app.

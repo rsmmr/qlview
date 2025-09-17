@@ -25,13 +25,14 @@ struct AboutView: View {
             Text("Version \(Bundle.main.bundleVersion)")
                 .font(.subheadline)
 
-            Text("© 2024 Robin Sommer")
+            Text("© 2025 Robin Sommer")
                 .font(.system(.footnote, weight: .thin))
 
             Spacer()
 
             HStack {
                 Link("GitHub", destination: URL(string: "https://github.com/rsmmr/qlview")!)
+                Divider()
                 Link(
                     "License",
                     destination: URL(
