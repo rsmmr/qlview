@@ -12,6 +12,15 @@ public func showAlert(msg: String, sub: String, style: NSAlert.Style = .informat
     alert.runModal()
 }
 
+func savedWindowSize(defaultWidth: Double = 800, defaultHeight: Double = 600) -> CGSize {
+    let fd = UserDefaults.standard.string(forKey: "MyWindowSize") ?? ""
+    let parts = fd.split(separator: " ")
+    if parts.count >= 4, let w = Double(parts[2]), let h = Double(parts[3]) {
+        return CGSize(width: w, height: h)
+    }
+    return CGSize(width: defaultWidth, height: defaultHeight)
+}
+
 // From https://www.fivestars.blog/articles/conditional-modifiers.
 extension View {
     @ViewBuilder

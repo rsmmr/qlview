@@ -32,6 +32,8 @@ struct qlviewApp: App {
     @State private var shouldOpenNewDocument = false
 
     var body: some Scene {
+        let size = savedWindowSize()
+
         WindowGroup(for: Document.self) { $doc in
             ContentView(doc: doc)
                 .navigationTitle(doc?.url.lastPathComponent ?? "")
@@ -50,7 +52,7 @@ struct qlviewApp: App {
                     AboutView(showAbout: $showAbout)
                 }
         }
-        .defaultSize(width: 800, height: 600)
+        .defaultSize(width: size.width, height: size.height)
         .restorationBehavior(.disabled)
         .defaultLaunchBehavior(.automatic)
         .handlesExternalEvents(matching: [])  // do not open URLs in existing scene
@@ -117,7 +119,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         NSApplication.shared.setActivationPolicy(.regular)
         NSApplication.shared.activate(ignoringOtherApps: true)
-        // NSApp.setActivationPolicy(.accessory) // No menu bar, no dock
     }
 
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {

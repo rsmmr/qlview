@@ -29,6 +29,30 @@ struct QLView: NSViewRepresentable {
     }
 }
 
+class WindowCapturingView: NSView {
+    var onWindow: ((NSWindow?) -> Void)?
+
+    override func viewDidMoveToWindow() {
+        super.viewDidMoveToWindow()
+        onWindow?(window)
+    }
+}
+
+struct WindowAccessor: NSViewRepresentable {
+    @Binding var window: NSWindow?
+
+    func makeNSView(context: Context) -> WindowCapturingView {
+        let view = WindowCapturingView()
+        view.onWindow = { self.window = $0 }
+        return view
+    }
+
+    func updateNSView(_ nsView: WindowCapturingView, context: Context) {
+        nsView.onWindow = { self.window = $0 }
+        if window == nil { window = nsView.window }
+    }
+}
+
 struct ContentView: View {
     @State var doc: Document?
     @State var window: NSWindow? = nil
@@ -40,22 +64,8 @@ struct ContentView: View {
 
     func saveWindowSize() {
         guard let window = window else { return }
-
-        // window.saveFrame(usingName: "MyWindowSize") // does not seem to do anything
-
-        // To see the value recorded here, use "defaults read qlview". To flush
-        // the state, "defaults delete qlview".
         UserDefaults.standard.set(window.frameDescriptor, forKey: "MyWindowSize")
-    }
-
-    func restoreWindowSize() {
-        guard let window = window else { return }
-
-        // window.setFrameUsingName("MyWindowSize") // same as above
-
-        if let frame = UserDefaults.standard.string(forKey: "MyWindowSize") {
-            window.setFrame(from: frame)
-        }
+        UserDefaults.standard.synchronize()
     }
 
     var body: some View {
@@ -142,16 +152,11 @@ struct ContentView: View {
             }
         }
         .onAppear { focus = true }
-        .onReceive(NotificationCenter.default.publisher(for: NSWindow.didBecomeMainNotification)) { notification in
-            if window == nil {
-                if let win = notification.object as? NSWindow {
-                    window = win
-                    restoreWindowSize()
-                }
-            }
-        }
+        .background(WindowAccessor(window: $window))
         .onReceive(NotificationCenter.default.publisher(for: NSWindow.willCloseNotification)) { notification in
-            saveWindowSize()
+            if let win = notification.object as? NSWindow, win == window {
+                saveWindowSize()
+            }
         }
         .onCopyCommand {
             guard let doc = doc else { return [] }
