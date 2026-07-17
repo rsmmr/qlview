@@ -1,3 +1,16 @@
+0.5-4 | 2026-07-17 15:36:12 +0200
+
+  * Restore icon's accent color asset deleted previously.
+
+  * Fix persisting window size across restarts.
+
+    We now read the saved window size at app startup and pass it to
+    SwiftUI's default size so the window opens natively at the right
+    dimensions, instead of relying on overriding the default after the
+    fact. We also capture the window reference more reliably, and save the
+    frame size on closing only for the matching window, while also
+    ensuring it reaches disk before the app terminates.
+
 0.5-2 | 2025-09-17 09:41:42 +0200
 
   * Update about box.
